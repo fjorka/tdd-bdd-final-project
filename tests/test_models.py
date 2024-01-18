@@ -119,11 +119,11 @@ class TestProductModel(unittest.TestCase):
     def test_update_a_product(self):
         """It should Update a Product"""
 
-        #test non existing object
+        # Test non existing object
         product = ProductFactory()
         product.id = None
 
-        self.assertRaises(DataValidationError,product.update)
+        self.assertRaises(DataValidationError, product.update)
 
         product.create()
         self.assertIsNotNone(product.id)
